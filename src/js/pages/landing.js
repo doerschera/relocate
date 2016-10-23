@@ -1,8 +1,7 @@
 import React from 'react';
 import Heading from '../components/heading.js';
 import Search from '../components/searchBar.js';
-import Select from '../components/select.js';
-import Button from '../components/button.js';
+import Compare from '../components/compare.js';
 
 export default class Landing extends React.Component {
 
@@ -11,11 +10,7 @@ export default class Landing extends React.Component {
       <div>
         <Heading />
         <Search />
-        <div class='row'>
-          <Select />
-          <Select />
-          <Button name="compare"/>
-        </div>
+        <Compare />
       </div>
     )
   }
