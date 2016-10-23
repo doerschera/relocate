@@ -6,6 +6,7 @@ export default class SearchBar extends React.Component {
     super(props);
     this.state = {value: 'search'}
     this.handleChange = this.handleChange.bind(this);
+    this.handleInputClick = this.handleInputClick.bind(this);
     this.handleClick = this.handleClick.bind(this);
   }
 
@@ -13,16 +14,20 @@ export default class SearchBar extends React.Component {
     this.setState({value: event.target.value});
   }
 
-  handleClick() {
+  handleInputClick() {
     this.setState({value: ''});
+  }
+
+  handleClick() {
+    console.log('click');
   }
 
   render() {
     return (
       <div class='row'>
         <div class='col s4 offset-s4'>
-          <input class='input-field' onChange={this.handleChange} value={this.state.value} onClick={this.handleClick}></input>
-          <Button name='search' />
+          <input class='input-field' onChange={this.handleChange} value={this.state.value} onClick={this.handleInputClick}></input>
+          <Button name='search' onClick={this.handleClick}/>
         </div>
       </div>
     )
