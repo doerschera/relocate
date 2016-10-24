@@ -15,8 +15,8 @@ export default class Compare extends React.Component {
   render() {
     return (
       <div class='row'>
-        <Select />
-        <Select />
+        <Select cities={this.props.cities}/>
+        <Select cities={this.props.cities}/>
         <Button name='compare' onClick={this.handleClick}/>
       </div>
     )

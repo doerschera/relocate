@@ -10,7 +10,7 @@ export default class Landing extends React.Component {
       <div>
         <Heading />
         <Search />
-        <Compare />
+        <Compare cities={this.props.cities}/>
       </div>
     )
   }

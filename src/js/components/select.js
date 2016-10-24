@@ -14,8 +14,7 @@ export default class Select extends React.Component {
   }
 
   render() {
-    const cities = ['Choose a city','New York, NY', 'Chicago, IL', 'Seattle, WA'];
-    const citiesOpts = cities.map((city, i) => <option value={i} key={i}>{city}</option>);
+    const citiesOpts = this.props.cities.map((city, i) => <option value={i} key={i}>{city}</option>);
 
     return (
       <div class='col s4 offset-s4'>
