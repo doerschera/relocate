@@ -2,7 +2,7 @@ import React from 'react';
 import reactDOM from 'react-dom';
 import Landing from './pages/landing';
 
-const cities = ['New York, NY', 'Chicago, IL', 'Seattle, WA'];
+const cities = ['Choose a City','New York, NY', 'Chicago, IL', 'Seattle, WA'];
 
 class App extends React.Component {
   constructor(props) {
