@@ -9,7 +9,7 @@ export default class Landing extends React.Component {
     return (
       <div>
         <Heading />
-        <Search />
+        <Search showSearch={this.props.showSearch.bind(this)}/>
         <Compare cities={this.props.cities}/>
       </div>
     )

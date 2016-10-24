@@ -1,6 +1,7 @@
 import React from 'react';
 import reactDOM from 'react-dom';
-import Landing from './pages/landing';
+import Landing from './pages/landing.js';
+import SearchPage from './pages/searchPage.js';
 
 const cities = ['Choose a City','New York, NY', 'Chicago, IL', 'Seattle, WA'];
 
@@ -14,9 +15,11 @@ class App extends React.Component {
   }
 
   // render functions
-  showSearch() {
-    if(this.state.search) {
-      return <Search />
+  showSearch(query) {
+    if(cities.indexOf(query) != -1 & query != cities[0]) {
+      console.log('success');
+
+      this.setState({search: true});
     }
   }
 
@@ -28,8 +31,24 @@ class App extends React.Component {
 
   // handle button clicks
 
+
   render() {
-    return <Landing cities={cities} />;
+    var search;
+    if(this.state.seach == true) {
+      search = <h1>Hello</h1>
+    } else {
+      search = null;
+    }
+
+    return (
+      <div>
+        <Landing
+          cities={cities}
+          showSearch = {this.showSearch.bind(this)}
+        />
+        <div>{this.state.search ? <SearchPage /> : null}</div>
+      </div>
+    );
   }
 }
 

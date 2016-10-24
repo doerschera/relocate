@@ -19,7 +19,8 @@ export default class SearchBar extends React.Component {
   }
 
   handleClick() {
-    console.log('click');
+    var query = this.state.value;
+    this.props.showSearch(query);
   }
 
   render() {
